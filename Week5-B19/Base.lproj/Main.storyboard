@@ -21,6 +21,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="sdD-Yq-m7T"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7zw-7E-v14"/>
+                                </connections>
                             </mapView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F25-Og-Bh1">
                                 <rect key="frame" x="8" y="508" width="200" height="30"/>
@@ -72,7 +75,7 @@
                     <connections>
                         <outlet property="latitudeField" destination="F25-Og-Bh1" id="DXG-EA-UCF"/>
                         <outlet property="longitudeField" destination="LfJ-2n-vxV" id="0km-ow-LCG"/>
-                        <outlet property="mapView" destination="Jm0-9C-c62" id="AWR-Gk-4du"/>
+                        <outlet property="theMapView" destination="Jm0-9C-c62" id="n7k-9t-bgO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -9,9 +9,9 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
-	
-	@IBOutlet weak var mapView: MKMapView!
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+
+	@IBOutlet var theMapView: MKMapView!
 	@IBOutlet weak var latitudeField: UITextField!
 	@IBOutlet weak var longitudeField: UITextField!
 	
@@ -22,14 +22,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		locationManager.delegate = self
+		self.locationManager.delegate = self
+		self.theMapView.delegate = self
 		
-		self.mapView = MKMapView(frame: self.mapView.frame)
+		self.locationManager.requestWhenInUseAuthorization()
 		
-		var startCoordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-		var region = MKCoordinateRegionMake(startCoordinate, MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100))
-		self.mapView.setRegion(region, animated: true)
+		
+//		var startCoordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+//		var region = MKCoordinateRegionMake(startCoordinate, MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100))
+//		self.theMapView.setRegion(region, animated: true)
 
+	}
+	override func viewWillAppear(animated: Bool) {
+	}
+	override func viewWillDisappear(animated: Bool) {
+		locationManager.stopUpdatingLocation()
+		locationManager.stopMonitoringSignificantLocationChanges()
 	}
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
@@ -41,16 +49,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 		switch status {
 		case .Authorized:
 			println("didChangeAuthorizationStatus - Authorized")
-			locationManager.startUpdatingLocation()
+			
+//			if CLLocationManager.locationServicesEnabled() {
+//				locationManager.startUpdatingLocation()
+//				locationManager.desiredAccuracy = Double(10)
+//				locationManager.distanceFilter = Double(100)
+			self.theMapView.showsUserLocation = true
 
-			//Apple's low power version
-			//locationManager.startMonitoringSignificantLocationChanges()
+//			}
+			if CLLocationManager.significantLocationChangeMonitoringAvailable() {
+				locationManager.startMonitoringSignificantLocationChanges() //Apple's low power version
+			}
 			
 		case .AuthorizedWhenInUse:
 			println("didChangeAuthorizationStatus - Authorized in use")
-			locationManager.startUpdatingLocation()
-			
-			//.startMonitoringSignificantLocationChanges() Isn't performant enough to really use the when in use.
+			//locationManager.startUpdatingLocation()
+			locationManager.startMonitoringSignificantLocationChanges() //Isn't performant enough to really use the when in use.
+			self.theMapView.showsUserLocation = true
+
 			
 		case .Denied, .Restricted:
 			println("didChangeAuthorizationStatus - Denied or Restricted")
@@ -73,6 +89,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 //MARK:
 //MARK: IBAction
 	@IBAction func markCoordinate(sender: AnyObject) {
+		
+//		var newCoordinate = latitude: self.latitudeField.text.doubleValue, longitude: string: self.longitudeField.text.doubleValue)
+//		var region = MKCoordinateRegionMake(newCoordinate, MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0))
+//		self.theMapView.setRegion(region, animated: true)
+		
 		
 	}
 }
