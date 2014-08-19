@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38821C7F19A3E669001EC562 /* Week5-B19.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38821C7D19A3E669001EC562 /* Week5-B19.xcdatamodeld */; };
+		38821C8219A3E704001EC562 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38821C8119A3E704001EC562 /* Reminder.swift */; };
 		38DA837C19A2948100C60507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DA837B19A2948100C60507 /* AppDelegate.swift */; };
 		38DA837E19A2948100C60507 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DA837D19A2948100C60507 /* ViewController.swift */; };
 		38DA838119A2948100C60507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DA837F19A2948100C60507 /* Main.storyboard */; };
@@ -26,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38821C7E19A3E669001EC562 /* Week5-B19.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Week5-B19.xcdatamodel"; sourceTree = "<group>"; };
+		38821C8019A3E704001EC562 /* Week5-B19-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Week5-B19-Bridging-Header.h"; sourceTree = "<group>"; };
+		38821C8119A3E704001EC562 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		38DA837619A2948100C60507 /* Week5-B19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Week5-B19.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DA837A19A2948100C60507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38DA837B19A2948100C60507 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +138,9 @@
 		38DA839A19A2951D00C60507 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				38821C8019A3E704001EC562 /* Week5-B19-Bridging-Header.h */,
+				38821C7D19A3E669001EC562 /* Week5-B19.xcdatamodeld */,
+				38821C8119A3E704001EC562 /* Reminder.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -246,6 +254,8 @@
 			files = (
 				38DA837E19A2948100C60507 /* ViewController.swift in Sources */,
 				38DA837C19A2948100C60507 /* AppDelegate.swift in Sources */,
+				38821C7F19A3E669001EC562 /* Week5-B19.xcdatamodeld in Sources */,
+				38821C8219A3E704001EC562 /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,9 +373,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Week5-B19/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Week5-B19/Week5-B19-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -374,9 +387,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Week5-B19/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Week5-B19/Week5-B19-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -445,6 +460,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		38821C7D19A3E669001EC562 /* Week5-B19.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				38821C7E19A3E669001EC562 /* Week5-B19.xcdatamodel */,
+			);
+			currentVersion = 38821C7E19A3E669001EC562 /* Week5-B19.xcdatamodel */;
+			path = "Week5-B19.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 38DA836E19A2948100C60507 /* Project object */;
 }

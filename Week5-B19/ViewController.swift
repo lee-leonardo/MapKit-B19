@@ -24,7 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 		
 		self.locationManager.delegate = self
 		self.theMapView.delegate = self
-		
+				
 		self.locationManager.requestWhenInUseAuthorization()
 		
 		
@@ -90,7 +90,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 //MARK: IBAction
 	@IBAction func markCoordinate(sender: AnyObject) {
 		
-//		var newCoordinate = latitude: self.latitudeField.text.doubleValue, longitude: string: self.longitudeField.text.doubleValue)
+		var latitude : NSString = self.latitudeField.text
+		var longitude : NSString = self.longitudeField.text
+
+		var setCoordinate = CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
+
+		var pin = MKPointAnnotation()
+		pin.coordinate = setCoordinate
+		
+		theMapView.addAnnotation(pin)
+
+		
+		
 //		var region = MKCoordinateRegionMake(newCoordinate, MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0))
 //		self.theMapView.setRegion(region, animated: true)
 		
