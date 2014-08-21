@@ -71,16 +71,68 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="9LN-jn-2o4"/>
+                    <navigationItem key="navigationItem" id="9LN-jn-2o4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="uZW-2k-rcM">
+                            <connections>
+                                <action selector="showReminders:" destination="BYZ-38-t0r" id="jtD-Gk-9WV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="latitudeField" destination="F25-Og-Bh1" id="DXG-EA-UCF"/>
                         <outlet property="longitudeField" destination="LfJ-2n-vxV" id="0km-ow-LCG"/>
                         <outlet property="theMapView" destination="Jm0-9C-c62" id="n7k-9t-bgO"/>
+                        <segue destination="DSM-O3-iwg" kind="show" identifier="ShowReminders" id="M9K-a9-Bmt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117" y="407"/>
+        </scene>
+        <!--Reminder View Controller-->
+        <scene sceneID="lRI-XA-IAj">
+            <objects>
+                <viewController id="DSM-O3-iwg" customClass="ReminderViewController" customModule="Week5_B19" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BgC-Ag-90d"/>
+                        <viewControllerLayoutGuide type="bottom" id="h8U-Cc-SC3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iDr-8w-tAT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Kyb-hU-Ui7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" id="BZ9-3d-smm">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BZ9-3d-smm" id="eZZ-K7-Gnl">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DSM-O3-iwg" id="r6V-Ex-KFm"/>
+                                    <outlet property="delegate" destination="DSM-O3-iwg" id="Vge-BM-hoU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kyb-hU-Ui7" firstAttribute="top" secondItem="iDr-8w-tAT" secondAttribute="top" id="Eey-ll-0eG"/>
+                            <constraint firstItem="Kyb-hU-Ui7" firstAttribute="leading" secondItem="iDr-8w-tAT" secondAttribute="leading" id="MsC-Mr-cw7"/>
+                            <constraint firstAttribute="trailing" secondItem="Kyb-hU-Ui7" secondAttribute="trailing" id="pU0-r0-tiY"/>
+                            <constraint firstItem="h8U-Cc-SC3" firstAttribute="top" secondItem="Kyb-hU-Ui7" secondAttribute="bottom" id="ro1-ov-UCU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="reminderTableView" destination="Kyb-hU-Ui7" id="oK7-iq-gCy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zaK-fe-4pA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800" y="407"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="os3-VH-WZa">
@@ -98,7 +150,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3d1-mr-CaF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="1068"/>
+            <point key="canvasLocation" x="383" y="407"/>
         </scene>
     </scenes>
 </document>

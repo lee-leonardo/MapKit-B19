@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		386D28F619A54C8B006D1BB7 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D28F519A54C8B006D1BB7 /* ReminderViewController.swift */; };
+		386D28F819A54E84006D1BB7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386D28F719A54E84006D1BB7 /* CoreData.framework */; };
 		38821C7F19A3E669001EC562 /* Week5-B19.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38821C7D19A3E669001EC562 /* Week5-B19.xcdatamodeld */; };
 		38821C8219A3E704001EC562 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38821C8119A3E704001EC562 /* Reminder.swift */; };
 		38DA837C19A2948100C60507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DA837B19A2948100C60507 /* AppDelegate.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		386D28F519A54C8B006D1BB7 /* ReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		386D28F719A54E84006D1BB7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		38821C7E19A3E669001EC562 /* Week5-B19.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Week5-B19.xcdatamodel"; sourceTree = "<group>"; };
 		38821C8019A3E704001EC562 /* Week5-B19-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Week5-B19-Bridging-Header.h"; sourceTree = "<group>"; };
 		38821C8119A3E704001EC562 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
@@ -48,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				386D28F819A54E84006D1BB7 /* CoreData.framework in Frameworks */,
 				38DA839C19A2955100C60507 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +70,7 @@
 		38DA836D19A2948100C60507 = {
 			isa = PBXGroup;
 			children = (
+				386D28F719A54E84006D1BB7 /* CoreData.framework */,
 				38DA839B19A2955000C60507 /* MapKit.framework */,
 				38DA837819A2948100C60507 /* Week5-B19 */,
 				38DA838B19A2948100C60507 /* Week5-B19Tests */,
@@ -123,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				38DA837D19A2948100C60507 /* ViewController.swift */,
+				386D28F519A54C8B006D1BB7 /* ReminderViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -254,6 +261,7 @@
 			files = (
 				38DA837E19A2948100C60507 /* ViewController.swift in Sources */,
 				38DA837C19A2948100C60507 /* AppDelegate.swift in Sources */,
+				386D28F619A54C8B006D1BB7 /* ReminderViewController.swift in Sources */,
 				38821C7F19A3E669001EC562 /* Week5-B19.xcdatamodeld in Sources */,
 				38821C8219A3E704001EC562 /* Reminder.swift in Sources */,
 			);
